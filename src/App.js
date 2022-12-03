@@ -1,5 +1,7 @@
 import {useState} from 'react';
-import database from './firebase';
+// import firestore from './firebase';
+import firestore from '@react-native-firebase/firestore';
+
 
 function App() {
 const [name , setName] = useState();
@@ -7,10 +9,28 @@ const [age , setAge] = useState();
 	
 // Push Function
 const Push = () => {
-	database.ref("user").set({
-	name : name,
-	age : age,
-	}).catch(alert);
+
+  // firestore().collection('EmployeeCustomers')
+  // .doc(String(name)).set({
+  //   // name: name,
+  //   age: age,
+  // })
+  // .then(() => {
+  //   console.log('User added!');
+  // }).catch(alert);
+
+  firestore().collection('EmployeeCustomers').add({
+    name: name,
+    age: age,
+  })
+  .then(() => {
+    console.log('User added!');
+  }).catch(alert);
+
+	// database.ref("user").set({
+	// name : name,
+	// age : age,
+	// }).catch(alert);
 }
 
 return (
