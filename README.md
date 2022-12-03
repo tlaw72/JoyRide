@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Joyride
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project shows a Proof-of-Concept that our website can intake data and post it to a backend database.
+We use Node.js to sync with a Realtime Database on Firebase.
 
 ## Available Scripts
 
