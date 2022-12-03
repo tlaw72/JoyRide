@@ -12,23 +12,6 @@ const [representativeEmail , setRepresentativeEmail] = useState();
 // Push Function
 const Push = () => {
 
-  // firestore().collection('EmployeeCustomers')
-  // .doc(String(name)).set({
-  //   // name: name,
-  //   age: age,
-  // })
-  // .then(() => {
-  //   console.log('User added!');
-  // }).catch(alert);
-
-  // firestore().collection('EmployeeCustomers').add({
-  //   name: name,
-  //   age: age,
-  // })
-  // .then(() => {
-  //   console.log('User added!');
-  // }).catch(alert);
-
 	database.ref("user").set({
     companyName : companyName,
     representativeName : representativeName,
@@ -37,30 +20,12 @@ const Push = () => {
 }
 
 
-const OurForm = () => {
-  return(
-      <div className="Center">
-        <br/><br/>
-        <br/><br/>
-        <p>Enter Company Details</p>
-          <input placeholder="Company name" value={companyName}
-          onChange={(e) => setCompanyName(e.target.value)}/>
-          <br/><br/>
-          <input placeholder="Representative name" value={representativeName}
-          onChange={(e) => setRepresentativeName(e.target.value)}/>
-          <br/><br/>
-          <input placeholder="Representative email" value={representativeEmail}
-          onChange={(e) => setRepresentativeEmail(e.target.value)}/>
-          <br/><br/>
-          <button onClick={Push}>Submit</button>
-      </div>
-  )
-}
-
 return (
 	<div>
     <Header/>
-    <OurForm/>
+    <OurForm companyName={companyName} setCompanyName={setCompanyName} representativeName={representativeName} 
+      setRepresentativeName={setRepresentativeName} representativeEmail={representativeEmail} 
+      setRepresentativeEmail={setRepresentativeEmail} Push={Push}/>
 	</div>
 );
 }
