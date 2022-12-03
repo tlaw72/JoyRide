@@ -1,0 +1,21 @@
+.Header{
+    background-color: #6A4BC2;
+    position: absolute;
+    top: 0;
+    height: 100px;
+    width: 100%;
+}
+
+.Image{
+    position: absolute;
+    top: 0;
+    height: 100px;
+}
+
+.Text{
+    font: "noto-sans";
+    color: white;
+    text-align: center;
+    font-size: 45px;
+    vertical-align: middle;
+}
